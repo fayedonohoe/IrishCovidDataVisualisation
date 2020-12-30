@@ -13,16 +13,54 @@
     <pre id="message-container"></pre>
     <script>
 
-      const csvUrl = 'https://opendata-geohive.hub.arcgis.com/datasets/27d401c9ae084097bb1f3a69b69462a1_0.csv?outSR={"latestWkid"%3A3857%2C"wkid"%3A102100}';
+      // LEA Data - 14 Day Incident Rates per 100K
+      //const csvUrl = 'https://opendata-geohive.hub.arcgis.com/datasets/27d401c9ae084097bb1f3a69b69462a1_0.csv?outSR={"latestWkid"%3A3857%2C"wkid"%3A102100}';
+      //
+      const csvUrl = 'https://opendata-geohive.hub.arcgis.com/datasets/d9be85b30d7748b5b7c09450b8aede63_0.csv?outSR={"latestWkid"%3A3857%2C"wkid"%3A102100}';
+
+
+    //   d3.csv(",", csvUrl, function(d) {
+    //     return {
+    //       //year: new Date(+d.Year, 0, 1), // convert "Year" column to Date
+    //       //length: +d.Length // convert "Length" column to number
+    //       ObjectId: +d.OBJECTID,
+    //       OrigId: +d.ORIGID,
+    //       CountyName: d.CountyName,
+    //       Population: +d.PopulationCensus16,
+    //       TimeStamp:  d.TimeStamp,
+    //       Cases: +d.ConfirmedCovidCases
+    //       // ,
+    //       // Deaths: d.ConfirmedCovidDeaths,
+    //       // Recovered: d.ConfirmedCovidRecovered
+    //     };
+    //   }).then(function(data) {
+    //     console.log(data);
+    // });
+
 
       // With d3.csv
       d3.csv(csvUrl).then(data => {
-        let message = '';
-        message = message + Math.round(d3.csvFormat(data).length / 1024) + ' kB\n';
-        message = message + data.length + ' rows\n';
-        message = message + data.columns.length + ' columns';
+        //const latestDateEntry = data.columns[data.length - 1];
+        // const latestDateEntry = data.columns[10];
+        let latestSetStart = data.length - 25;
+        let latestDateEntries = data.filter (function(d){
+          return d.OBJECTID >= latestSetStart;
+        });
+
+        // console.log( data.map(d => d[latestDateEntry] ));
+        console.log( latestDateEntries);
+        const totalCases = '2000';
+        const message = totalCases + ' total Cases';
+
+
+        // Imported data info
+        // let message = ';'
+        // message = message + Math.round(d3.csvFormat(data).length / 1024) + ' kB\n';
+        // message = message + data.length + ' rows\n';
+        // message = message + data.columns.length + ' columns';
+
         document.getElementById('message-container').textContent = message;
-        console.log(data);
+        //console.log(data);
         });
 
       // With fetch, async, and await.
