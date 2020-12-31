@@ -42,14 +42,21 @@
       d3.csv(csvUrl).then(data => {
         //const latestDateEntry = data.columns[data.length - 1];
         // const latestDateEntry = data.columns[10];
-        let latestSetStart = data.length - 25;
+
+        let latestSetStart = data.length - 25;  //EOF, minus counties
         let latestDateEntries = data.filter (function(d){
           return d.OBJECTID >= latestSetStart;
         });
 
-        // console.log( data.map(d => d[latestDateEntry] ));
-        console.log( latestDateEntries);
-        const totalCases = '2000';
+        // Logs the last 26 entries, which is the latest entry per County
+        // It this Maps this to extract the ConfirmedCovidCases value from each
+        console.log(latestDateEntries);
+        //console.log( latestDateEntries.map(d => d.ConfirmedCovidCases ));
+
+        const latestCountyNumbers = latestDateEntries.map(d => +d.ConfirmedCovidCases );
+        console.log(latestCountyNumbers);
+
+        const totalCases = latestCountyNumbers.reduce((accumulator, currentValue) => accumulator + currentValue);
         const message = totalCases + ' total Cases';
 
 
