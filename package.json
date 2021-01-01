@@ -1,0 +1,23 @@
+{
+  "name": "irishcoviddatavisualisation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fayedonohoe/IrishCovidDataVisualisation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fayedonohoe/IrishCovidDataVisualisation/issues"
+  },
+  "homepage": "https://github.com/fayedonohoe/IrishCovidDataVisualisation#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

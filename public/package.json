@@ -1,0 +1,12 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "A work in progress Final Year Project. The aim is to create a visualisation of Irish Covid-19 data, down to Local Electoral Area level.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
