@@ -1,4 +1,4 @@
-//import { format } from 'd3';
+// import { format } from 'd3';
   // LEA Data - 14 Day Incident Rates per 100K
   //const csvUrl = 'https://opendata-geohive.hub.arcgis.com/datasets/27d401c9ae084097bb1f3a69b69462a1_0.csv?outSR={"latestWkid"%3A3857%2C"wkid"%3A102100}';
   //
@@ -31,7 +31,7 @@
       return d.OBJECTID >= latestSetStart;
     });
 
-    //const commaFormatter = format(',');
+    const commaFormatter = d3.format(',');
 
     // Logs the last 26 entries, which is the latest entry per County
     // It this Maps this to extract the ConfirmedCovidCases value from each
@@ -47,7 +47,7 @@
     const totalCases = latestCountyNumbers.reduce((accumulator, currentValue) => accumulator + currentValue);
     const totalDeaths = latestCountyNumbers.reduce((accumulator, currentValue) => accumulator + currentValue);
 
-    const message = totalCases + ' total Cases' + '\nas of ' + latestDateEntries[25].TimeStamp
+    const message = commaFormatter(totalCases) + ' total Cases' + '\nas of ' + latestDateEntries[25].TimeStamp
 
     ;
 
