@@ -1,9 +1,24 @@
+{ "type": "module" }
+
 {
   "name": "irishcoviddatavisualisation",
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.16.2",
+    "rollup-plugin-terser": "^5.0.0",
+    "serve": "^11.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -16,8 +31,5 @@
   "bugs": {
     "url": "https://github.com/fayedonohoe/IrishCovidDataVisualisation/issues"
   },
-  "homepage": "https://github.com/fayedonohoe/IrishCovidDataVisualisation#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "homepage": "https://github.com/fayedonohoe/IrishCovidDataVisualisation#readme"
 }
