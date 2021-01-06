@@ -1,5 +1,5 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+// var React = require('react');
+// var ReactDOM = require('react-dom');
 
 // import React from 'react';
 // import ReactDOM from 'react-dom';
@@ -19,11 +19,11 @@ const height = window.innerHeight;
 //   return <LineChart data={data}/>
 // };
 
-  const App = () => (
-    	<h1>Hello</h1>
-  );
-  const rootElement = document.getElementById('root');
-  ReactDOM.render(<App />, rootElement);
+  // const App = () => (
+  //   	<h1>Hello</h1>
+  // );
+  // const rootElement = document.getElementById('root');
+  // ReactDOM.render(<App />, rootElement);
 
 
 
