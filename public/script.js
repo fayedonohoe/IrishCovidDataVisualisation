@@ -1,29 +1,33 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 
-  // LEA Data - 14 Day Incident Rates per 100K
-  //const csvUrl = 'https://opendata-geohive.hub.arcgis.com/datasets/27d401c9ae084097bb1f3a69b69462a1_0.csv?outSR={"latestWkid"%3A3857%2C"wkid"%3A102100}';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import { range } from 'd3';
+
+const width = window.innerWidth;
+const height = window.innerHeight;
+
+// Create line chart React Component
+// const LineChart = ({ data }) => {
+//   return <svg />
+// };
+//
+// const App = () =>
+//   const data = [];
+//
+//   return <LineChart data={data}/>
+// };
+
+  const react.App = () => (
+    	<h1>Hello</h1>
+  );
+  const rootElement = document.getElementById('root');
+  react-dom.ReactDOM.render(<App />, rootElement);
+
+
 
   const csvUrl = 'https://opendata-geohive.hub.arcgis.com/datasets/d9be85b30d7748b5b7c09450b8aede63_0.csv?outSR={"latestWkid"%3A3857%2C"wkid"%3A102100}';
-
-//   If converting to JSON objects
-//   d3.csv(",", csvUrl, function(d) {
-//     return {
-//       //year: new Date(+d.Year, 0, 1), // convert "Year" column to Date
-//       //length: +d.Length // convert "Length" column to number
-//       ObjectId: +d.OBJECTID,
-//       OrigId: +d.ORIGID,
-//       CountyName: d.CountyName,
-//       Population: +d.PopulationCensus16,
-//       TimeStamp:  d.TimeStamp,
-//       Cases: +d.ConfirmedCovidCases
-//       // ,
-//       // Deaths: d.ConfirmedCovidDeaths,
-//       // Recovered: d.ConfirmedCovidRecovered
-//     };
-//   }).then(function(data) {
-//     console.log(data);
-// });
-
 
   // Parse with d3.csv - uses Fetch API and async/await
   d3.csv(csvUrl).then(data => {
@@ -52,7 +56,6 @@ var React = require('react');
 
     const message = commaFormatter(totalCases) + ' total Cases' + '\nas of ' + latestDateEntries[25].TimeStamp;
 
-
     document.getElementById('message-container').textContent = message;
     //console.log(data);
     });
@@ -62,6 +65,28 @@ var React = require('react');
 
 
     // ******* notes and alternative less efficient methods *******
+
+    // LEA Data - 14 Day Incident Rates per 100K
+    //const csvUrl = 'https://opendata-geohive.hub.arcgis.com/datasets/27d401c9ae084097bb1f3a69b69462a1_0.csv?outSR={"latestWkid"%3A3857%2C"wkid"%3A102100}';
+
+    //   If converting to JSON objects
+    //   d3.csv(",", csvUrl, function(d) {
+    //     return {
+    //       //year: new Date(+d.Year, 0, 1), // convert "Year" column to Date
+    //       //length: +d.Length // convert "Length" column to number
+    //       ObjectId: +d.OBJECTID,
+    //       OrigId: +d.ORIGID,
+    //       CountyName: d.CountyName,
+    //       Population: +d.PopulationCensus16,
+    //       TimeStamp:  d.TimeStamp,
+    //       Cases: +d.ConfirmedCovidCases
+    //       // ,
+    //       // Deaths: d.ConfirmedCovidDeaths,
+    //       // Recovered: d.ConfirmedCovidRecovered
+    //     };
+    //   }).then(function(data) {
+    //     console.log(data);
+    // });
 
     // Imported data info - ** goes above the document.getEl message container **
     // let message = ';'

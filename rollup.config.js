@@ -1,15 +1,15 @@
-import resolve from '@rollup/plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve'; //locate and bundle dependencies
 import commonjs from '@rollup/plugin-commonjs';
-import { terser } from 'rollup-plugin-terser';
+import { terser } from 'rollup-plugin-terser'; //minify code
 
 // `npm run build` -> `production` is true
 // `npm run dev` -> `production` is false
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-	input: 'public/script.js',
+	input: 'public/src/index.js',
 	output: {
-		file: 'public/bundle.js',
+		file: 'public/src/bundle.js',
 		format: 'iife', // immediately-invoked function expression — suitable for <script> tags
 		sourcemap: true
 	},
