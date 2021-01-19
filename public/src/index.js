@@ -52,16 +52,13 @@ const height = window.innerHeight;
     console.log(latestCountyDeaths);
 
     const totalCases = latestCountyNumbers.reduce((accumulator, currentValue) => accumulator + currentValue);
-    const totalDeaths = latestCountyNumbers.reduce((accumulator, currentValue) => accumulator + currentValue);
+    const totalDeaths = latestCountyDeaths.reduce((accumulator, currentValue) => accumulator + currentValue); //cant be used with this dataset
 
     const message = commaFormatter(totalCases) + ' total Cases' + '\nas of ' + latestDateEntries[25].TimeStamp;
 
     document.getElementById('message-container').textContent = message;
     //console.log(data);
     });
-
-
-
 
 
     // ******* notes and alternative less efficient methods *******
